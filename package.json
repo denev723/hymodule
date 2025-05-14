@@ -8,11 +8,15 @@
     "build": "npm run build:css && npm run build:js",
     "watch:css": "sass --watch src/scss/main.scss:/Users/byeongjookim/Library/CloudStorage/CloudMounter-java_resource/hogi-hjc-p5-webroot/hymodule/resources/front/css/main.min.css --style=compressed",
     "watch:js": "chokidar 'src/js/**/*.js' -c 'npm run build:js'",
-    "watch": "npm run watch:css & npm run watch:js"
+    "watch": "npm run watch:css & npm run watch:js",
+    "obfuscate:js": "javascript-obfuscator src/js/main.js --output src/js/main.obf.js",
+    "minify:js": "terser src/js/main.obf.js -o /Users/byeongjookim/Library/CloudStorage/CloudMounter-java_resource/hogi-hjc-p5-webroot/hymodule/resources/front/js/main.obf.min.js -c -m",
+    "secure:js": "npm run obfuscate:js && npm run minify:js"
   },
   "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "javascript-obfuscator": "^4.1.1",
     "sass": "^1.77.0",
-    "terser": "^5.30.0",
-    "chokidar-cli": "^3.0.0"
+    "terser": "^5.30.0"
   }
 }

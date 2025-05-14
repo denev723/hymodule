@@ -82,6 +82,11 @@
     &__family {
         display: inline-block;
         position: relative;
+        &.site-footer__family--active {
+            ul {
+                transform: scaleY(1);
+            }
+        }
         ul {
             width: 100%;
             padding: rem(10);
@@ -90,6 +95,9 @@
             background-color: #191919;
             position: absolute;
             bottom: calc(100% + #{rem(10)});
+            transform: scaleY(0);
+            transform-origin: bottom;
+            @include smooth-transition(transform 0.3s ease);
             li {
                 a {
                     @include smooth-transition(color 0.2s ease);
