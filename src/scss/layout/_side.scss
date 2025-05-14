@@ -1,0 +1,149 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.site-side {
+    width: rem(280);
+    height: 100vh;
+    padding: rem(50) rem(40) rem(30);
+    border-right: 1px solid #dddddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    &__container {
+        height: 100%;
+    }
+    &__caption {
+        padding: 0 rem(9);
+        margin-bottom: rem(85);
+        font-family: $font-nanum-square;
+        font-size: rem(14);
+        line-height: lh(24);
+        color: $color-primary;
+    }
+}
+
+.site-logo {
+    margin-bottom: rem(75);
+    &__wrapper {
+        @include flex-center;
+        flex-direction: column;
+        gap: rem(10) 0;
+        align-items: center;
+    }
+    &__icon {
+        @include icon-size(rem(59), rem(58));
+    }
+    &__text {
+        font-family: $font-s-core-dream;
+        line-height: 1;
+        text-align: center;
+        color: $color-primary;
+        &--thin {
+            margin-bottom: rem(7);
+            font-weight: 200;
+            letter-spacing: 0.04em;
+        }
+        &--bold {
+            font-weight: 700;
+        }
+    }
+}
+
+.lnb {
+    margin-bottom: rem(32);
+    &__item {
+        & > a {
+            display: block;
+            padding: rem(16) 0 rem(16) rem(39);
+            background-repeat: no-repeat;
+            background-position: rem(3) 50%;
+            font-family: $font-nanum-square;
+            font-weight: 800;
+            font-size: rem(19);
+            line-height: 1;
+            color: $color-primary;
+            @include smooth-transition(color 0.2s ease);
+            &:hover {
+                color: $color-primary-hover;
+            }
+        }
+        &-0 {
+            & > a {
+                background-image: url(../images/lnb-icon-1.png);
+                background-size: rem(24);
+            }
+        }
+        &-1 {
+            & > a {
+                background-image: url(../images/lnb-icon-2.png);
+                background-size: rem(20);
+            }
+        }
+        &-2 {
+            & > a {
+                background-image: url(../images/lnb-icon-3.png);
+                background-size: rem(21);
+            }
+        }
+        &-3 {
+            & > a {
+                background-image: url(../images/lnb-icon-4.png);
+                background-size: rem(20);
+            }
+        }
+    }
+}
+
+.gnb {
+    padding: rem(30) 0;
+    margin-bottom: rem(35);
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    &__item {
+        a {
+            display: block;
+            padding: rem(11) 0 rem(11) rem(38);
+            font-family: $font-nanum-square;
+            font-weight: 400;
+            font-size: rem(16);
+            line-height: 1;
+            color: $color-primary;
+            position: relative;
+            @include smooth-transition(color 0.2s ease);
+            &:hover {
+                color: $color-primary-hover;
+            }
+            &::before {
+                content: "";
+                width: rem(10);
+                height: rem(10);
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: rem(10);
+                transform: translateY(-50%);
+            }
+        }
+        &-0 {
+            a::before {
+                background-color: #2342ff;
+            }
+        }
+        &-1 {
+            a::before {
+                background-color: #06961e;
+            }
+        }
+        &-2 {
+            a::before {
+                background-color: #ff4e00;
+            }
+        }
+    }
+}

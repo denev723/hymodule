@@ -1,0 +1,44 @@
+@use "sass:math";
+@use "sass:color";
+@use "sass:list";
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// 버튼 스타일 mixin
+@mixin btn-style($width, $height) {
+    @include flex-center;
+    width: $width;
+    height: $height;
+    padding: 0;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+// 아이콘/이미지 사이즈 mixin
+@mixin icon-size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+// 부드러운 트랜지션 효과 mixin
+@mixin smooth-transition($transitions) {
+    transition: $transitions;
+}
+
+// px → rem 변환 함수 (62.5% 기준)
+// 사용 예시: font-size: rem(32); // 32px → 3.2rem
+@function rem($px, $base: 10) {
+    @return math.div($px, $base) * 1rem;
+}
+
+// line-height px → rem 변환 함수 (62.5% 기준)
+// 사용 예시: line-height: lh(24); // 24px → 2.4rem
+@function lh($px, $base: 10) {
+    @return math.div($px, $base) * 1rem;
+}

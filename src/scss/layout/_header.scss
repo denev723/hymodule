@@ -1,0 +1,49 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.site-header {
+    padding: 0 rem(60);
+    &__container {
+        @include flex-center;
+        padding: rem(45) 0;
+        position: relative;
+    }
+    &__search {
+        width: 100%;
+        max-width: rem(500);
+        position: relative;
+        input {
+            width: 100%;
+            height: rem(50);
+            padding: rem(10) rem(56) rem(10) rem(26);
+            border: 1px solid transparent;
+            border-radius: rem(25);
+            background-color: #eeeeee;
+            font-family: $font-nanum-square;
+            font-size: rem(17);
+            line-height: 1;
+            @include smooth-transition(border-color 0.2s ease);
+            &:focus {
+                border-color: $color-primary;
+                box-shadow: none;
+                outline: none;
+            }
+            &::placeholder {
+                color: #777777;
+            }
+        }
+        .btn-submit {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+    }
+    .btn-login {
+        position: absolute;
+        top: 50%;
+        right: rem(-20);
+        transform: translateY(-50%);
+        @include smooth-transition(color 0.2s ease);
+    }
+}

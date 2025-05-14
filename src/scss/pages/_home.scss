@@ -1,0 +1,8 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+/* pages/_home.scss 예시 */
+.home {
+    padding: rem(40);
+    background: #fafbfc;
+}

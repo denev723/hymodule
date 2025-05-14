@@ -1,0 +1,172 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "sass:color";
+
+.site-footer {
+    &__top,
+    &__bottom {
+        @include flex-center;
+        gap: 0 rem(50);
+        padding: 0 rem(60);
+    }
+    &__top {
+        min-height: rem(720);
+        padding-top: rem(100);
+        padding-bottom: rem(100);
+        background-color: #191919;
+    }
+    &__bottom {
+        min-height: rem(140);
+        justify-content: space-between;
+        align-items: center;
+        background-color: #240ef0;
+    }
+    &__brand {
+        flex: 1;
+        padding-left: rem(35);
+        p {
+            font-family: $font-arial-black;
+            font-size: rem(150);
+            line-height: lh(133);
+            letter-spacing: -0.08em;
+            color: #ffffff;
+            span {
+                color: #240ef0;
+            }
+        }
+    }
+    &__info {
+        width: rem(635);
+        padding: rem(13) rem(55) rem(13) 0;
+        hr {
+            margin-top: rem(50);
+            margin-bottom: rem(55);
+        }
+        &-desc {
+            p {
+                font-family: $font-nanum-square;
+                font-weight: 700;
+                font-size: rem(26);
+                line-height: lh(36);
+                color: #ffffff;
+                word-break: keep-all;
+                span {
+                    color: #240ef0;
+                }
+            }
+        }
+        &-list {
+            display: flex;
+            margin-bottom: rem(64);
+            li {
+                flex: 1;
+                p {
+                    font-family: $font-nanum-gothic;
+                    line-height: 1;
+                    letter-spacing: -0.02em;
+                    word-break: keep-all;
+                    color: #ffffff;
+                    &.title {
+                        margin-bottom: rem(18);
+                        font-weight: 700;
+                        font-size: rem(16);
+                    }
+                    &.desc {
+                        font-size: rem(14);
+                        line-height: lh(26);
+                    }
+                }
+            }
+        }
+    }
+    &__family {
+        display: inline-block;
+        position: relative;
+        ul {
+            width: 100%;
+            padding: rem(10);
+            border-radius: rem(8);
+            border: 1px solid #ffffff;
+            background-color: #191919;
+            position: absolute;
+            bottom: calc(100% + #{rem(10)});
+            li {
+                a {
+                    @include smooth-transition(color 0.2s ease);
+                    display: block;
+                    padding: rem(7) rem(8);
+                    font-family: $font-nanum-gothic;
+                    font-size: rem(14);
+                    line-height: 1;
+                    color: #ffffff;
+                    &:hover {
+                        color: $color-primary-hover;
+                    }
+                }
+            }
+        }
+    }
+    &__link-list {
+        display: flex;
+        gap: 0 rem(1);
+        padding-left: rem(19);
+        li {
+            a {
+                @include smooth-transition(color 0.2s ease);
+                display: block;
+                padding: rem(16);
+                font-family: $font-nanum-gothic;
+                font-weight: 700;
+                font-size: rem(16);
+                line-height: 1;
+                color: #ffffff;
+                &:hover {
+                    color: color.adjust(#ffffff, $lightness: -20%);
+                }
+            }
+            &:not(:last-child) {
+                position: relative;
+                &::after {
+                    content: "";
+                    width: rem(1);
+                    height: rem(14);
+                    background-color: #ffffff;
+                    position: absolute;
+                    top: 50%;
+                    right: rem(-1);
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+    &__copyright {
+        padding-right: rem(55);
+        font-family: $font-nanum-gothic;
+        font-size: rem(14);
+        line-height: 1;
+        color: #ffffff;
+    }
+}
+
+@media (max-width: 1675px) {
+    .site-footer {
+        &__brand {
+            padding-left: 0;
+            p {
+                font-size: rem(120);
+                line-height: lh(103);
+            }
+        }
+        &__info {
+            width: rem(580);
+            padding: rem(7) 0;
+        }
+        &__link-list {
+            padding-left: 0;
+            margin-left: rem(-16);
+        }
+        &__copyright {
+            padding-right: 0;
+        }
+    }
+}

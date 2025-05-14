@@ -1,0 +1,83 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.btn {
+    @include btn-style(auto, auto);
+    @include smooth-transition(color 0.2s ease);
+}
+
+.btn-top {
+    @include btn-style(rem(56), rem(51));
+    @include smooth-transition(color 0.2s ease);
+    svg {
+        @include icon-size(rem(34), auto);
+        fill: $color-primary;
+        @include smooth-transition(fill 0.2s ease);
+    }
+    &:hover {
+        svg {
+            fill: $color-primary-hover;
+        }
+    }
+}
+
+.btn-submit {
+    @include btn-style(rem(56), rem(50));
+    @include smooth-transition(color 0.2s ease);
+    svg {
+        @include icon-size(rem(20), rem(20));
+        fill: $color-primary;
+        @include smooth-transition(fill 0.2s ease);
+    }
+    &:hover {
+        svg {
+            fill: $color-primary-hover;
+        }
+    }
+}
+
+.btn-login {
+    @include btn-style(auto, rem(50));
+    @include smooth-transition(color 0.2s ease);
+    align-items: center;
+    padding-right: rem(66);
+    background-image: url(../images/user-round-1.png);
+    background-size: rem(50);
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    font-family: $font-nanum-square;
+    font-size: rem(16);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: $color-primary;
+    &:hover {
+        color: $color-primary-hover;
+    }
+}
+
+.btn-family {
+    @include btn-style(rem(340), rem(50));
+    @include smooth-transition(border-color 0.2s ease);
+    justify-content: flex-start;
+    align-items: center;
+    padding: rem(15) rem(35) rem(15) rem(18);
+    border-radius: rem(8);
+    border: 1px solid #ffffff;
+    font-family: $font-nanum-gothic;
+    font-size: rem(15);
+    line-height: 1;
+    color: #ffffff;
+    position: relative;
+    &:hover {
+        border-color: $color-primary-hover;
+    }
+    svg {
+        @include icon-size(rem(12), rem(7));
+        fill: #ffffff;
+        position: absolute;
+        top: 50%;
+        right: rem(23);
+        transform: translateY(-50%);
+    }
+}
