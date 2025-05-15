@@ -5,7 +5,7 @@
     width: rem(280);
     height: 100vh;
     padding: rem(50) rem(40) rem(30);
-    border-right: 1px solid #dddddd;
+    border-right: 1px solid $color-gray-200;
     position: fixed;
     top: 0;
     left: 0;
@@ -68,7 +68,7 @@
             font-size: rem(19);
             line-height: 1;
             color: $color-primary;
-            @include smooth-transition(color 0.2s ease);
+            transition: color 0.3s ease;
             &:hover {
                 color: $color-primary-hover;
             }
@@ -103,8 +103,8 @@
 .gnb {
     padding: rem(30) 0;
     margin-bottom: rem(35);
-    border-top: 1px solid #eeeeee;
-    border-bottom: 1px solid #eeeeee;
+    border-top: 1px solid $color-gray-100;
+    border-bottom: 1px solid $color-gray-100;
     &__item {
         a {
             display: block;
@@ -115,7 +115,7 @@
             line-height: 1;
             color: $color-primary;
             position: relative;
-            @include smooth-transition(color 0.2s ease);
+            transition: color 0.3s ease;
             &:hover {
                 color: $color-primary-hover;
             }
@@ -132,17 +132,17 @@
         }
         &-0 {
             a::before {
-                background-color: #2342ff;
+                background-color: $color-blue-700;
             }
         }
         &-1 {
             a::before {
-                background-color: #06961e;
+                background-color: $color-green;
             }
         }
         &-2 {
             a::before {
-                background-color: #ff4e00;
+                background-color: $color-orange;
             }
         }
     }

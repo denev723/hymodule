@@ -1,8 +1,433 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
-/* pages/_home.scss 예시 */
-.home {
-    padding: rem(40);
-    background: #fafbfc;
+.slides {
+    padding: rem(15) rem(60) rem(64);
+    &__container {
+        @include flex-center;
+        gap: 0 rem(20);
+    }
+}
+
+.slide {
+    &--type-1 {
+        width: rem(840);
+    }
+    &--type-2 {
+        width: rem(390);
+    }
+    .swiper {
+        height: rem(360);
+        margin-bottom: rem(10);
+        &-slide {
+            @include card-radius(20);
+            overflow: hidden;
+            &__wrapper {
+                width: 100%;
+                height: 100%;
+                display: block;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition:
+                        filter 0.3s ease,
+                        transform 0.3s ease;
+                }
+            }
+        }
+    }
+    &__controls {
+        @include flex-center;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    &__progress {
+        width: rem(300);
+        height: rem(2);
+        margin-right: rem(23);
+        background-color: $color-gray-200;
+        position: relative;
+        &-line {
+            height: 100%;
+            background-color: $color-red;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    &__nums {
+        margin-right: rem(12);
+        font-family: $font-nanum-square;
+        font-weight: 700;
+        font-size: rem(14);
+        line-height: 1;
+        color: $color-gray-300;
+        &-current {
+            color: $color-red;
+        }
+    }
+    &__btns {
+        display: flex;
+    }
+    &__btn {
+        transition:
+            fill 0.3s ease,
+            background-color 0.3s ease,
+            color 0.3s ease,
+            transform 0.3s ease;
+        @include btn-style(rem(21), rem(50));
+        &:hover {
+            svg {
+                fill: $color-primary-hover;
+            }
+        }
+        &--prev,
+        &--next {
+            svg {
+                @include icon-size(rem(7), rem(12));
+            }
+        }
+        &--prev {
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+        &--toggle {
+            width: rem(22);
+            svg {
+                @include icon-size(rem(8), rem(10));
+            }
+        }
+    }
+    &__play {
+        .slide__btn--toggle-play-icon {
+            display: none;
+        }
+    }
+    &__pause {
+        .slide__btn--toggle-pause-icon {
+            display: none;
+        }
+    }
+    &__pagination {
+        @include flex-center;
+        .swiper-pagination-bullet {
+            transition: background-color 0.3s ease;
+            @include icon-size(rem(18), rem(50));
+            display: block;
+            position: relative;
+            background-color: transparent;
+            opacity: 1;
+            &.swiper-pagination-bullet-active {
+                &::before {
+                    background-color: $color-red;
+                }
+            }
+            &::before {
+                content: "";
+                @include icon-size(rem(10), rem(10));
+                border-radius: 50%;
+                background-color: $color-gray-200;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+.keywords {
+    padding: 0 rem(60);
+    margin-bottom: rem(70);
+    &__container {
+        padding: rem(33) 0;
+        border-top: 1px solid $color-gray-900;
+        border-bottom: 1px solid $color-gray-100;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__title {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        h2 {
+            font-family: $font-nanum-square;
+            font-weight: 700;
+            font-size: rem(24);
+            line-height: rem(34);
+        }
+        .dots {
+            display: flex;
+            gap: 0 rem(6);
+            padding: 0 rem(8);
+            .dot {
+                @include icon-size(rem(6), rem(6));
+                border-radius: 50%;
+                background-color: $color-orange;
+            }
+        }
+    }
+    &__content {
+        width: 100%;
+        max-width: rem(960);
+        display: flex;
+    }
+    &__list {
+        flex: 1;
+        padding-left: rem(26);
+        &-title {
+            margin-bottom: rem(17);
+            font-family: $font-nanum-square;
+            font-weight: 700;
+            font-size: rem(18);
+            line-height: rem(28);
+        }
+    }
+}
+
+.cards {
+    padding: 0 rem(60);
+    margin-bottom: rem(70);
+    &--my {
+        margin-bottom: rem(80);
+    }
+    &__container {
+        .card-swiper {
+            margin-bottom: rem(60);
+        }
+        .card-swiper__progress {
+            width: 100%;
+            height: 1px;
+            background-color: $color-gray-100;
+            position: relative;
+            .swiper-pagination-progressbar-fill {
+                height: 100%;
+                background-color: $color-gray-900;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+    &__title-wrap {
+        @include flex-center;
+        justify-content: space-between;
+        margin-bottom: rem(32);
+    }
+    &__title {
+        font-family: $font-nanum-square;
+        font-weight: 700;
+        font-size: rem(28);
+        line-height: rem(34);
+        span {
+            color: #0943ad;
+        }
+    }
+    .card-swiper__btns {
+        display: flex;
+        margin-right: rem(-7);
+    }
+    .card-swiper__btn {
+        transition:
+            fill 0.3s ease,
+            background-color 0.3s ease,
+            color 0.3s ease,
+            transform 0.3s ease;
+        display: block;
+        padding: rem(7);
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        &:hover {
+            svg {
+                fill: $color-primary;
+            }
+        }
+        svg {
+            @include icon-size(rem(24), rem(17));
+            fill: $color-gray-400;
+        }
+        &--prev {
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+.notice {
+    padding: 0 rem(60);
+    margin-bottom: rem(80);
+    &__title-wrap {
+        @include flex-center;
+        justify-content: space-between;
+        margin-bottom: rem(25);
+    }
+    &__title {
+        font-family: $font-nanum-square;
+        font-weight: 800;
+        font-size: rem(36);
+        line-height: rem(46);
+        letter-spacing: -0.02em;
+        span {
+            color: $color-primary;
+        }
+    }
+    &__btns {
+        margin-right: rem(-6);
+    }
+    &__btn-more {
+        @include btn-style(rem(46), rem(46));
+        padding: rem(10) rem(3);
+        &:hover {
+            svg {
+                fill: $color-primary-hover;
+            }
+        }
+        svg {
+            @include icon-size(rem(44), rem(15));
+            fill: $color-gray-900;
+        }
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 rem(28);
+    }
+    &__item {
+        width: calc(50% - #{rem(14)});
+        border-bottom: 1px solid $color-gray-100;
+        &:nth-child(1),
+        &:nth-child(2) {
+            border-top: rem(3) solid $color-gray-900;
+        }
+        &-wrap {
+            transition: color 0.3s ease;
+            display: block;
+            padding: rem(28) 0 rem(38);
+            font-family: $font-nanum-square;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            &:hover {
+                color: $color-primary-hover;
+            }
+        }
+        &-category {
+            display: inline-block;
+            margin-bottom: rem(11);
+            font-size: rem(17);
+            line-height: 1;
+        }
+        &-title {
+            font-size: rem(22);
+            line-height: rem(30);
+            @include ellipsis;
+        }
+        &-date {
+            font-size: rem(16);
+            line-height: rem(30);
+        }
+    }
+}
+
+.faq {
+    padding: 0 rem(60);
+    margin-bottom: rem(80);
+    &__title {
+        margin-bottom: rem(25);
+        font-family: $font-nanum-square;
+        font-weight: 800;
+        font-size: rem(36);
+        line-height: rem(46);
+        letter-spacing: -0.02em;
+        span {
+            color: $color-primary;
+        }
+    }
+    &__list {
+        border-top: 1px solid $color-gray-900;
+    }
+    &__item {
+        padding: rem(29) rem(82) rem(29) 0;
+        border-bottom: 1px solid $color-gray-100;
+        position: relative;
+        &.faq__item--active {
+            .faq__item-btn {
+                background-color: $color-gray-900;
+                transition: background-color 0.3s ease;
+                &:hover {
+                    background-color: $color-primary-hover;
+                    svg {
+                        fill: $color-white;
+                    }
+                }
+                svg {
+                    fill: $color-white;
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+        &-top {
+            display: flex;
+            font-family: $font-nanum-square;
+            font-weight: 800;
+            font-size: rem(22);
+            line-height: lh(32);
+        }
+        &-num {
+            width: rem(63);
+            padding: 0 rem(5);
+        }
+        &-body {
+            display: none;
+            padding: rem(25) rem(63) 0;
+            font-family: $font-nanum-square;
+            font-size: rem(18);
+            line-height: lh(32);
+        }
+        &-btn {
+            @include btn-style(rem(52), rem(52));
+            border-radius: 50%;
+            position: absolute;
+            top: rem(16);
+            right: rem(15);
+            &:hover {
+                svg {
+                    fill: $color-primary-hover;
+                }
+            }
+            svg {
+                @include icon-size(rem(19), rem(18));
+                fill: $color-gray-900;
+                transform: rotate(90deg);
+                transition:
+                    fill 0.3s ease,
+                    transform 0.3s ease;
+            }
+        }
+    }
+}
+
+.video-content {
+    padding: 0 rem(60) rem(123);
+    &__title-wrap {
+        margin-bottom: rem(52);
+        font-family: $font-nanum-square;
+        text-align: center;
+    }
+    &__title {
+        font-weight: 800;
+        font-size: rem(40);
+        line-height: rem(50);
+        span {
+            color: $color-primary;
+        }
+        &-sub {
+            margin-bottom: rem(11);
+            font-weight: 700;
+            font-size: rem(20);
+        }
+    }
 }

@@ -18,18 +18,18 @@
             padding: rem(10) rem(56) rem(10) rem(26);
             border: 1px solid transparent;
             border-radius: rem(25);
-            background-color: #eeeeee;
+            background-color: $color-gray-100;
             font-family: $font-nanum-square;
             font-size: rem(17);
             line-height: 1;
-            @include smooth-transition(border-color 0.2s ease);
+            transition: border-color 0.3s ease;
             &:focus {
                 border-color: $color-primary;
                 box-shadow: none;
                 outline: none;
             }
             &::placeholder {
-                color: #777777;
+                color: $color-placeholder;
             }
         }
         .btn-submit {
@@ -44,6 +44,6 @@
         top: 50%;
         right: rem(-20);
         transform: translateY(-50%);
-        @include smooth-transition(color 0.2s ease);
+        transition: color 0.3s ease;
     }
 }
