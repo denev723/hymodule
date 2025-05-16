@@ -5,7 +5,7 @@
 .site-footer {
     &__top,
     &__bottom {
-        @include flex-center;
+        display: flex;
         gap: 0 rem(50);
         padding: 0 rem(60);
     }
@@ -17,8 +17,7 @@
     }
     &__bottom {
         min-height: rem(140);
-        justify-content: space-between;
-        align-items: center;
+        @include flex-between;
         background-color: $color-blue-800;
     }
     &__brand {
@@ -107,7 +106,8 @@
                     font-size: rem(14);
                     line-height: 1;
                     color: $color-white;
-                    &:hover {
+                    &:hover,
+                    &:focus {
                         color: $color-primary-hover;
                     }
                 }

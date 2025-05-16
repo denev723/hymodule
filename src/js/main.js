@@ -170,4 +170,28 @@ $(document).ready(function () {
       .children(".faq__item-body")
       .slideUp();
   });
+
+  const $svgEl = $("[data-logo]");
+  const $svgInfo = {
+    squares: `<svg aria-hidden="true"><use xlink:href="/resources/front/images/squares.svg#a"></use></svg>`,
+    lines: `<svg aria-hidden="true"><use xlink:href="/resources/front/images/hamburger.svg#a"></use></svg>`,
+    "rarr-1": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/rarr-type-1.svg#Layer_1"></use></svg>`,
+    "darr-1": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/darr-type-1.svg#a"></use></svg>`,
+    "larr-1": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/rarr-type-1.svg#Layer_1"></use></svg>`,
+    "uarr-1": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/darr-type-1.svg#a"></use></svg>`,
+    "list-type-1-1": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/subpage/list-type-1-1.svg#a"></use></svg>`,
+    "list-type-1-2": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/subpage/list-type-1-2.svg#a"></use></svg>`,
+    "list-type-1-3": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/subpage/list-type-1-3.svg#a"></use></svg>`,
+    "list-type-1-4": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/subpage/list-type-1-4.svg#a"></use></svg>`,
+    "list-type-1-5": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/subpage/list-type-1-5.svg#a"></use></svg>`,
+  };
+  if ($svgEl.length > 0) {
+    $svgEl.each(function () {
+      const logoType = $(this).data("logo");
+      $(this).find("svg").remove();
+      if ($svgInfo[logoType]) {
+        $(this).append($svgInfo[logoType]);
+      }
+    });
+  }
 });

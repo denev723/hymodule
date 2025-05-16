@@ -2,7 +2,8 @@
 @use "../abstracts/mixins" as *;
 
 .module-card {
-    width: rem(350) !important;
+    max-width: rem(350);
+    width: 100%;
     a.module-card__wrapper:hover {
         .module-card__image {
             img {
@@ -15,6 +16,7 @@
     }
     &__wrapper {
         display: block;
+        transition: transform 0.3s ease;
     }
     &__image {
         padding-top: 68.57%;
@@ -91,6 +93,11 @@
 
 .video-card {
     width: rem(340);
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
     a.video-card__wrapper:hover {
         .video-card__thumb {
             img {
@@ -103,6 +110,7 @@
     }
     &__wrapper {
         display: block;
+        transition: transform 0.3s ease;
     }
     &__thumb {
         width: 100%;
@@ -165,7 +173,8 @@
         color: $color-black;
         transition: color 0.3s ease;
     }
-    &:hover {
+    &:hover,
+    &:focus {
         transition:
             box-shadow 0.3s ease,
             transform 0.3s ease,

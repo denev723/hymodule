@@ -1,6 +1,10 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
+img {
+    max-width: 100%;
+}
+
 #wrap {
     max-width: rem(1920);
     margin: 0 auto;
@@ -9,6 +13,8 @@
 
 .site-content {
     padding-left: rem(280);
+    position: relative;
+    overflow: hidden;
 }
 
 .text-uppercase {

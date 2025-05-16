@@ -14,7 +14,8 @@
         fill: $color-primary;
         transition: fill 0.3s ease;
     }
-    &:hover {
+    &:hover,
+    &:focus {
         svg {
             fill: $color-primary-hover;
         }
@@ -29,7 +30,8 @@
         fill: $color-primary;
         transition: fill 0.3s ease;
     }
-    &:hover {
+    &:hover,
+    &:focus {
         svg {
             fill: $color-primary-hover;
         }
@@ -51,7 +53,8 @@
     line-height: 1;
     letter-spacing: -0.02em;
     color: $color-primary;
-    &:hover {
+    &:hover,
+    &:focus {
         color: $color-primary-hover;
     }
 }
@@ -69,7 +72,8 @@
     line-height: 1;
     color: $color-white;
     position: relative;
-    &:hover {
+    &:hover,
+    &:focus {
         border-color: $color-primary-hover;
     }
     svg {
@@ -85,12 +89,10 @@
 .btn-round-list {
     @include flex-wrap;
     gap: rem(8) rem(6);
-    .btn-round {
-        display: block;
-    }
 }
 
 .btn-round {
+    display: block;
     padding: rem(11) rem(16);
     border-radius: rem(100);
     border: 1px solid $color-gray-200;
@@ -101,8 +103,108 @@
     transition:
         border-color 0.3s ease,
         color 0.3s ease;
-    &:hover {
+    &:hover,
+    &:focus {
         border-color: $color-gray-900;
         color: $color-gray-900;
+    }
+}
+
+.btn-round-flex {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 rem(13);
+    padding: rem(20) rem(29);
+    border-radius: rem(100);
+    border: rem(2) solid $color-white;
+    font-family: $font-nanum-square;
+    font-size: rem(16);
+    line-height: rem(16);
+    color: $color-white;
+    transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+    &:hover,
+    &:focus {
+        border-color: $color-primary-hover;
+        background-color: $color-primary-hover;
+        color: $color-white;
+        svg {
+            fill: $color-white;
+        }
+    }
+    svg {
+        width: rem(9);
+        height: rem(13);
+        margin-bottom: 1px;
+        fill: $color-white;
+        transition: fill 0.3s ease;
+    }
+}
+
+.btn-next {
+    width: rem(80);
+    height: rem(80);
+    @include flex-center;
+    border-radius: 50%;
+    border: none;
+    background-color: $color-white;
+    cursor: pointer;
+    box-shadow:
+        $color-black-10 0px 10px 15px -3px,
+        $color-black-05 0px 4px 6px -2px;
+    transition: background-color 0.3s ease;
+    svg {
+        width: rem(19);
+        height: rem(13);
+        fill: $color-black;
+        transition: fill 0.3s ease;
+    }
+    &:hover,
+    &:focus {
+        background-color: $color-primary-hover;
+        svg {
+            fill: $color-white;
+        }
+    }
+}
+
+.btn-square {
+    width: rem(50);
+    height: rem(50);
+    @include flex-center;
+    padding: 0;
+    border-radius: rem(8);
+    border: 1px solid $color-gray-300;
+    background-color: $color-white;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    svg {
+        fill: $color-black;
+        transition: fill 0.3s ease;
+    }
+    &:hover,
+    &:focus {
+        border-color: $color-primary-hover;
+        svg {
+            fill: $color-primary-hover;
+        }
+    }
+    &[data-logo="squares"] {
+        svg {
+            width: rem(21);
+            height: rem(21);
+        }
+    }
+    &[data-logo="lines"] {
+        svg {
+            .b {
+                fill: $color-white;
+            }
+            width: rem(18);
+            height: rem(18);
+        }
     }
 }

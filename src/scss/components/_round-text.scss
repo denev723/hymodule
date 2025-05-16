@@ -1,0 +1,32 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.round-title {
+    display: inline-block;
+    padding: rem(17) rem(30);
+    font-family: $font-nanum-square;
+    font-weight: 700;
+    font-size: rem(20);
+    line-height: 1;
+    border-radius: rem(100);
+    border: rem(3) solid $color-black;
+    color: $color-black;
+    &.round-title--white {
+        border-color: $color-white;
+        color: $color-white;
+    }
+}
+
+.round-title--bg {
+    display: inline-block;
+    padding: rem(16) rem(26);
+    border-radius: rem(100);
+    background-color: $color-primary;
+    font-family: $font-nanum-square;
+    font-size: rem(18);
+    line-height: 1;
+    color: $color-white;
+    span {
+        color: $color-yellow-bright;
+    }
+}

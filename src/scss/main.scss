@@ -12,6 +12,11 @@
 // components
 @use "components/button" as *;
 @use "components/card" as *;
-
+@use "components/round-text" as *;
+@use "components/grid" as *;
+@use "components/list" as *;
+@use "components/pagination" as *;
 // pages
 @use "pages/home" as *;
+@use "pages/about" as *;
+@use "pages/modules" as *;

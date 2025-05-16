@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $font-nanum-gothic: "NanumGothic", sans-serif;
 $font-arial-black: "Arial Black", sans-serif;
 $font-s-core-dream: "S-CoreDream", sans-serif;
@@ -26,3 +28,12 @@ $color-blue-100: #00467f;
 $color-blue-200: #1976d2;
 $color-dark: #292a2a;
 $color-placeholder: #777777;
+
+// 리팩토링에서 추가된 색상들
+$color-black-20: rgba(0, 0, 0, 0.2);
+$color-black-10: rgba(0, 0, 0, 0.1);
+$color-black-08: rgba(0, 0, 0, 0.08);
+$color-black-05: rgba(0, 0, 0, 0.05);
+$color-blue-dark: #20283a;
+$color-blue-light: #f3f7ff;
+$color-yellow-bright: #f6ff00;

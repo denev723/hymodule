@@ -1,0 +1,88 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.about {
+    padding: rem(140) rem(130) 0;
+    background-image: url(../images/subpage/about-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: $font-nanum-square;
+    color: $color-white;
+    &__container {
+        padding: rem(90) 0 rem(163);
+    }
+    &__top {
+        margin-bottom: rem(95);
+        .round-title {
+            margin-bottom: rem(32);
+        }
+    }
+    &__title {
+        margin-bottom: rem(25);
+        font-weight: 300;
+        font-size: rem(70);
+        line-height: lh(86);
+        b {
+            font-weight: 700;
+        }
+        .asterisk {
+            position: relative;
+            &::before {
+                content: "";
+                width: rem(35);
+                height: rem(36);
+                background-image: url(../images/asterisk.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                position: absolute;
+                top: rem(-8);
+                right: rem(-40);
+            }
+        }
+        &-sub {
+            font-size: rem(24);
+            line-height: lh(34);
+        }
+    }
+    &__img-wrap {
+        &--eq-1 {
+            margin-bottom: rem(83);
+        }
+        &--eq-2 {
+            margin-top: rem(129);
+            margin-bottom: rem(115);
+        }
+        &--eq-3 {
+            margin-top: rem(90);
+        }
+        &--type-1 {
+            display: flex;
+            gap: 0 rem(110);
+            img {
+                width: 100%;
+                max-width: rem(1090);
+            }
+        }
+    }
+    &__text-wrap {
+        p {
+            font-size: rem(20);
+            line-height: lh(42);
+            &.text-md {
+                margin-bottom: rem(43);
+                font-size: rem(38);
+                line-height: lh(56);
+            }
+            &.text-lg {
+                margin-bottom: rem(35);
+                font-size: rem(48);
+                line-height: lh(58);
+            }
+            span {
+                color: #617dfc;
+            }
+        }
+    }
+}

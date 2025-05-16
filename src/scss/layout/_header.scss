@@ -2,7 +2,12 @@
 @use "../abstracts/mixins" as *;
 
 .site-header {
+    width: calc(100% - #{rem(280)});
     padding: 0 rem(60);
+    position: absolute;
+    top: 0;
+    left: rem(280);
+    z-index: 9;
     &__container {
         @include flex-center;
         padding: rem(45) 0;
@@ -45,5 +50,15 @@
         right: rem(-20);
         transform: translateY(-50%);
         transition: color 0.3s ease;
+    }
+
+    &.site-header--sub {
+        .btn-login {
+            color: $color-white;
+            &:hover,
+            &:focus {
+                color: $color-primary-hover;
+            }
+        }
     }
 }

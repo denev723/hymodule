@@ -12,6 +12,7 @@
     overflow-y: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    z-index: 10;
     &::-webkit-scrollbar {
         display: none;
     }
@@ -69,7 +70,8 @@
             line-height: 1;
             color: $color-primary;
             transition: color 0.3s ease;
-            &:hover {
+            &:hover,
+            &:focus {
                 color: $color-primary-hover;
             }
         }
@@ -116,7 +118,8 @@
             color: $color-primary;
             position: relative;
             transition: color 0.3s ease;
-            &:hover {
+            &:hover,
+            &:focus {
                 color: $color-primary-hover;
             }
             &::before {

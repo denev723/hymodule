@@ -1,6 +1,10 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
+.site-body__main-wrapper {
+    padding-top: rem(140);
+}
+
 .slides {
     padding: rem(15) rem(60) rem(64);
     &__container {
@@ -77,7 +81,8 @@
             color 0.3s ease,
             transform 0.3s ease;
         @include btn-style(rem(21), rem(50));
-        &:hover {
+        &:hover,
+        &:focus {
             svg {
                 fill: $color-primary-hover;
             }
@@ -118,6 +123,7 @@
             display: block;
             position: relative;
             background-color: transparent;
+            margin: 0 !important;
             opacity: 1;
             &.swiper-pagination-bullet-active {
                 &::before {
@@ -240,7 +246,8 @@
         border: none;
         background-color: transparent;
         cursor: pointer;
-        &:hover {
+        &:hover,
+        &:focus {
             svg {
                 fill: $color-primary;
             }
@@ -281,7 +288,8 @@
     &__btn-more {
         @include btn-style(rem(46), rem(46));
         padding: rem(10) rem(3);
-        &:hover {
+        &:hover,
+        &:focus {
             svg {
                 fill: $color-primary-hover;
             }
@@ -310,7 +318,8 @@
             font-family: $font-nanum-square;
             font-weight: 700;
             letter-spacing: -0.02em;
-            &:hover {
+            &:hover,
+            &:focus {
                 color: $color-primary-hover;
             }
         }
@@ -357,7 +366,8 @@
             .faq__item-btn {
                 background-color: $color-gray-900;
                 transition: background-color 0.3s ease;
-                &:hover {
+                &:hover,
+                &:focus {
                     background-color: $color-primary-hover;
                     svg {
                         fill: $color-white;
@@ -393,7 +403,8 @@
             position: absolute;
             top: rem(16);
             right: rem(15);
-            &:hover {
+            &:hover,
+            &:focus {
                 svg {
                     fill: $color-primary-hover;
                 }
