@@ -1,0 +1,30 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.label {
+    height: rem(40);
+    display: inline-flex;
+    align-items: center;
+    padding: rem(10);
+    border-radius: rem(10);
+    font-family: $font-nanum-square;
+    font-weight: 700;
+    font-size: rem(18);
+    line-height: 1;
+    &--primary {
+        background-color: $color-primary;
+        color: $color-white;
+    }
+    &--success {
+        background-color: $color-success;
+        color: $color-white;
+    }
+    &--warning {
+        background-color: $color-warning;
+        color: $color-black;
+    }
+    &--danger {
+        background-color: $color-danger;
+        color: $color-white;
+    }
+}

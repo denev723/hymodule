@@ -175,6 +175,8 @@ $(document).ready(function () {
   const $svgInfo = {
     squares: `<svg aria-hidden="true"><use xlink:href="/resources/front/images/squares.svg#a"></use></svg>`,
     lines: `<svg aria-hidden="true"><use xlink:href="/resources/front/images/hamburger.svg#a"></use></svg>`,
+    home: `<svg aria-hidden="true"><use xlink:href="/resources/front/images/home.svg#a"></use></svg>`,
+    module: `<svg aria-hidden="true"><use xlink:href="/resources/front/images/modules.svg#a"></use></svg>`,
     "rarr-1": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/rarr-type-1.svg#Layer_1"></use></svg>`,
     "darr-1": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/darr-type-1.svg#a"></use></svg>`,
     "larr-1": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/rarr-type-1.svg#Layer_1"></use></svg>`,

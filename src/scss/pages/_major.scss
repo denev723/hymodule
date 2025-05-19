@@ -1,0 +1,148 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.major {
+    &__subvisual {
+        height: rem(740);
+        padding: rem(140) rem(60) 0;
+        background-color: #bbbbbb;
+        &__container {
+            height: 100%;
+            padding-top: rem(130);
+            padding-bottom: rem(140);
+            text-align: center;
+            position: relative;
+            .btn-homepage {
+                position: absolute;
+                bottom: rem(66);
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        &__college-name {
+            display: inline-block;
+            padding: rem(16) rem(18);
+            margin-bottom: rem(20);
+            border-radius: rem(100);
+            background-color: $color-white;
+            font-family: $font-nanum-square;
+            font-weight: 700;
+            font-size: rem(18);
+            line-height: 1;
+            color: $color-primary;
+        }
+        &__title {
+            margin-bottom: rem(9);
+            font-family: $font-nanum-square;
+            font-weight: 800;
+            font-size: rem(50);
+            line-height: lh(60);
+            color: $color-white;
+            &--en {
+                font-family: $font-nanum-square;
+                font-weight: 400;
+                font-size: rem(14);
+                line-height: lh(24);
+                letter-spacing: -0.02em;
+                color: $color-white;
+            }
+        }
+    }
+    &__container {
+        padding: rem(100) rem(60) rem(160);
+        .tab-list {
+            margin-bottom: rem(90);
+        }
+    }
+    &__btns {
+        display: flex;
+        justify-content: center;
+        gap: 0 rem(6);
+    }
+}
+
+.major-introduce {
+    max-width: rem(1120);
+    margin: 0 auto rem(70);
+    &__row {
+        display: flex;
+        gap: 0 rem(40);
+        &:first-child {
+            .major-introduce__row__title {
+                border-top: 1px solid $color-primary;
+            }
+            .major-introduce__row__content {
+                border-top: 1px solid $color-primary;
+            }
+        }
+        &__title {
+            width: rem(340);
+            padding: rem(60) 0;
+            border-bottom: 1px solid $color-primary;
+            p {
+                padding: rem(6) 0 rem(68);
+                font-family: $font-nanum-square;
+                font-size: rem(38);
+                line-height: lh(44);
+                color: $color-primary;
+                position: relative;
+                b {
+                    font-weight: 800;
+                }
+                &::before {
+                    content: "";
+                    width: rem(70);
+                    height: rem(40);
+                    background-image: url(../images/subpage/button.png);
+                    background-size: cover;
+                    background-position: center;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+        }
+        &__content {
+            flex: 1;
+            padding: rem(60) 0;
+            border-bottom: 1px solid $color-primary;
+        }
+    }
+    &__section {
+        &:not(:last-child) {
+            margin-bottom: rem(45);
+        }
+        &:has(.list-numeric) {
+            p.major-introduce__section__title,
+            div.major-introduce__section__title {
+                margin-bottom: rem(22);
+            }
+        }
+        p.major-introduce__section__title,
+        div.major-introduce__section__title {
+            margin-bottom: rem(15);
+        }
+        p.major-introduce__section__title {
+            font-family: $font-nanum-square;
+            font-weight: 800;
+            font-size: rem(26);
+            line-height: lh(44);
+            color: $color-primary;
+        }
+        div.major-introduce__section__title {
+            display: flex;
+            gap: 0 rem(10);
+            .label {
+                margin-top: rem(2);
+            }
+            p {
+                flex: 1;
+                font-family: $font-nanum-square;
+                font-weight: 800;
+                font-size: rem(26);
+                line-height: lh(44);
+                color: $color-primary;
+            }
+        }
+    }
+}

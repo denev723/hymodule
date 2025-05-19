@@ -1,0 +1,40 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "sass:color";
+
+.tab-list {
+    display: flex;
+    justify-content: center;
+    gap: rem(8);
+    &__item {
+        &.tab-list__item--active {
+            a {
+                border-color: $color-primary;
+                background-color: $color-primary;
+                color: $color-white;
+                &:hover,
+                &:focus {
+                    border-color: $color-primary-hover;
+                    background-color: $color-primary-hover;
+                }
+            }
+        }
+        a {
+            display: block;
+            padding: rem(20) rem(28);
+            border-radius: rem(100);
+            border: 1px solid #aaaaaa;
+            background-color: $color-white;
+            font-family: $font-nanum-square;
+            font-weight: 700;
+            font-size: rem(18);
+            line-height: 1;
+            color: #aaaaaa;
+            transition: background-color 0.3s ease;
+            &:hover,
+            &:focus {
+                background-color: color.scale($color-white, $lightness: -5%);
+            }
+        }
+    }
+}

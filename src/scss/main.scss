@@ -16,7 +16,11 @@
 @use "components/grid" as *;
 @use "components/list" as *;
 @use "components/pagination" as *;
+@use "components/tab" as *;
+@use "components/label" as *;
+
 // pages
 @use "pages/home" as *;
 @use "pages/about" as *;
 @use "pages/modules" as *;
+@use "pages/major" as *;
