@@ -15,6 +15,10 @@
         background-color: $color-primary;
         color: $color-white;
     }
+    &--secondary {
+        background-color: #00a7c5;
+        color: $color-white;
+    }
     &--success {
         background-color: $color-success;
         color: $color-white;

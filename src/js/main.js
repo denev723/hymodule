@@ -177,6 +177,7 @@ $(document).ready(function () {
     lines: `<svg aria-hidden="true"><use xlink:href="/resources/front/images/hamburger.svg#a"></use></svg>`,
     home: `<svg aria-hidden="true"><use xlink:href="/resources/front/images/home.svg#a"></use></svg>`,
     module: `<svg aria-hidden="true"><use xlink:href="/resources/front/images/modules.svg#a"></use></svg>`,
+    heart: `<svg aria-hidden="true"><use xlink:href="/resources/front/images/heart.svg#a"></use></svg>`,
     "rarr-1": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/rarr-type-1.svg#Layer_1"></use></svg>`,
     "darr-1": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/darr-type-1.svg#a"></use></svg>`,
     "larr-1": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/rarr-type-1.svg#Layer_1"></use></svg>`,
@@ -186,6 +187,11 @@ $(document).ready(function () {
     "list-type-1-3": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/subpage/list-type-1-3.svg#a"></use></svg>`,
     "list-type-1-4": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/subpage/list-type-1-4.svg#a"></use></svg>`,
     "list-type-1-5": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/subpage/list-type-1-5.svg#a"></use></svg>`,
+    "status-1": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/subpage/status-1.svg#a"></use></svg>`,
+    "status-2": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/subpage/status-2.svg#a"></use></svg>`,
+    "status-3": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/subpage/status-3.svg#a"></use></svg>`,
+    "status-4": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/subpage/status-4.svg#a"></use></svg>`,
+    "status-5": `<svg aria-hidden="true"><use xlink:href="/resources/front/images/subpage/status-5.svg#a"></use></svg>`,
   };
   if ($svgEl.length > 0) {
     $svgEl.each(function () {

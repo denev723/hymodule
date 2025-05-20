@@ -308,4 +308,29 @@
             }
         }
     }
+    &.major-btn--heart {
+        width: rem(80);
+        height: rem(80);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 1px solid #cccccc;
+        .major-btn__icon {
+            width: rem(26);
+            height: rem(22);
+            svg {
+                fill: #cccccc;
+            }
+        }
+        &:hover,
+        &:focus {
+            border-color: $color-primary-hover;
+            .major-btn__icon {
+                svg {
+                    fill: $color-primary-hover;
+                }
+            }
+        }
+    }
 }
