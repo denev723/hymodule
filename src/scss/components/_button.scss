@@ -6,6 +6,29 @@
     transition: color 0.3s ease;
 }
 
+.btn-menu {
+    width: rem(50);
+    height: rem(50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    svg {
+        width: rem(38);
+        height: rem(27);
+        fill: #1c3d88;
+    }
+    &:hover,
+    &:focus {
+        svg {
+            fill: $color-primary-hover;
+        }
+    }
+}
+
 .btn-top {
     @include btn-style(rem(56), rem(51));
     transition: color 0.3s ease;

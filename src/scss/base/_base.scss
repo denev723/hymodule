@@ -6,8 +6,8 @@ img {
 }
 
 #wrap {
-    max-width: rem(1920);
-    margin: 0 auto;
+    // max-width: rem(1920);
+    // margin: 0 auto;
     position: relative;
 }
 
@@ -31,4 +31,10 @@ img {
 
 .text-right {
     text-align: right;
+}
+
+@media (max-width: 1650px) {
+    .site-content {
+        padding-left: 0;
+    }
 }

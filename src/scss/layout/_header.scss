@@ -3,7 +3,7 @@
 
 .site-header {
     width: calc(100% - #{rem(280)});
-    padding: 0 rem(60);
+    padding: 0 rem(40);
     position: absolute;
     top: 0;
     left: rem(280);
@@ -13,6 +13,15 @@
         padding: rem(45) 0;
         position: relative;
     }
+
+    .btn-menu {
+        display: none;
+        position: absolute;
+        left: rem(-6);
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
     &__search {
         width: 100%;
         max-width: rem(500);
@@ -44,21 +53,43 @@
             transform: translateY(-50%);
         }
     }
+
     .btn-login {
         position: absolute;
         top: 50%;
-        right: rem(-20);
+        right: 0;
         transform: translateY(-50%);
         transition: color 0.3s ease;
     }
 
     &.site-header--sub {
+        .btn-menu {
+            svg {
+                fill: $color-white;
+            }
+            &:hover,
+            &:focus {
+                svg {
+                    fill: $color-primary-hover;
+                }
+            }
+        }
         .btn-login {
             color: $color-white;
             &:hover,
             &:focus {
                 color: $color-primary-hover;
             }
+        }
+    }
+}
+
+@media (max-width: 1650px) {
+    .site-header {
+        width: 100%;
+        left: 0;
+        .btn-menu {
+            display: block;
         }
     }
 }

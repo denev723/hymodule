@@ -8,17 +8,17 @@ $(document).ready(function () {
   });
 
   // 좌측 고정 사이드바 위치 계산 함수
-  function calcSideLeft() {
-    const $siteSide = $(".site-side");
-    const $siteWrapLeft = $("#wrap").offset().left;
-    if ($siteWrapLeft > 0) {
-      $siteSide.css("left", $siteWrapLeft);
-    }
-  }
+  // function calcSideLeft() {
+  //   const $siteSide = $(".site-side");
+  //   const $siteWrapLeft = $("#wrap").offset().left;
+  //   if ($siteWrapLeft > 0) {
+  //     $siteSide.css("left", $siteWrapLeft);
+  //   }
+  // }
 
   // 페이지 로드 및 리사이즈 시 사이드바 위치 재계산
-  calcSideLeft();
-  $(window).on("resize", calcSideLeft);
+  // calcSideLeft();
+  // $(window).on("resize", calcSideLeft);
 
   // 패밀리 사이트 버튼 클릭 시 토글
   $(".btn-family").on("click", function (e) {
@@ -202,4 +202,26 @@ $(document).ready(function () {
       }
     });
   }
+
+  $(".site-header").on("click", ".btn-menu", function () {
+    if (!$(".site-side").hasClass("active")) {
+      $(".site-side").addClass("active");
+    } else {
+      $(".site-side").removeClass("active");
+    }
+  });
+
+  // ESC 키로 사이드 메뉴 닫기
+  $(document).on("keydown", function (e) {
+    if (e.key === "Escape") {
+      $(".site-side").removeClass("active");
+    }
+  });
+
+  // 외부 클릭 시 사이드 메뉴 닫기
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest(".site-side, .btn-menu").length) {
+      $(".site-side").removeClass("active");
+    }
+  });
 });

@@ -6,6 +6,7 @@
     height: 100vh;
     padding: rem(50) rem(40) rem(30);
     border-right: 1px solid $color-gray-200;
+    background-color: $color-white;
     position: fixed;
     top: 0;
     left: 0;
@@ -13,6 +14,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
     z-index: 10;
+    transition: left 0.3s ease;
     &::-webkit-scrollbar {
         display: none;
     }
@@ -147,6 +149,15 @@
             a::before {
                 background-color: $color-orange;
             }
+        }
+    }
+}
+
+@media (max-width: 1650px) {
+    .site-side {
+        left: rem(-280);
+        &.active {
+            left: 0;
         }
     }
 }
