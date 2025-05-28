@@ -83,7 +83,8 @@
 }
 
 .btn-family {
-    @include btn-style(rem(340), rem(50));
+    height: rem(50);
+    display: flex;
     transition: border-color 0.3s ease;
     justify-content: flex-start;
     align-items: center;
@@ -354,6 +355,77 @@
                     fill: $color-primary-hover;
                 }
             }
+        }
+    }
+}
+
+.btn-close {
+    width: rem(50);
+    height: rem(50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    svg {
+        width: rem(30);
+        height: rem(30);
+        fill: $color-primary;
+    }
+    &:hover,
+    &:focus {
+        svg {
+            fill: $color-primary-hover;
+        }
+    }
+}
+
+.btn-user {
+    width: rem(50);
+    height: rem(50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    background-color: #d8eaf7;
+    svg {
+        width: rem(16);
+        height: rem(19);
+        fill: $color-primary;
+    }
+    &:hover,
+    &:focus {
+        background-color: $color-primary;
+        svg {
+            fill: $color-white;
+        }
+    }
+}
+
+@media (max-width: 720px) {
+    .btn-submit {
+        @include btn-style(rem(46), rem(40));
+        svg {
+            @include icon-size(rem(15), rem(15));
+        }
+    }
+    .btn-menu {
+        width: rem(44);
+        height: rem(44);
+        svg {
+            width: rem(22);
+            height: rem(16);
+        }
+    }
+    .btn-user {
+        width: rem(44);
+        height: rem(44);
+        svg {
+            width: rem(14);
+            height: rem(16);
         }
     }
 }

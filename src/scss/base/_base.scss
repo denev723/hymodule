@@ -33,8 +33,53 @@ img {
     text-align: right;
 }
 
-@media (max-width: 1650px) {
+.site-logo {
+    &__wrapper {
+        display: block;
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        @include icon-size(rem(59), rem(58));
+        fill: #1c3d88;
+    }
+
+    &__text {
+        flex-shrink: 0;
+        font-family: $font-s-core-dream;
+        font-size: rem(16);
+        line-height: 1;
+        text-align: center;
+        color: $color-primary;
+        &--thin {
+            margin-bottom: rem(7);
+            font-weight: 200;
+            letter-spacing: 0.04em;
+        }
+        &--bold {
+            font-weight: 700;
+        }
+    }
+}
+
+@media (max-width: 1350px) {
     .site-content {
         padding-left: 0;
+    }
+}
+
+@media (max-width: 720px) {
+    .site-logo {
+        &__icon {
+            @include icon-size(rem(44), rem(43));
+            fill: #1c3d88;
+        }
+
+        &__text {
+            font-size: rem(12);
+            &--thin {
+                margin-bottom: rem(5);
+            }
+        }
     }
 }

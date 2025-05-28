@@ -152,14 +152,14 @@ $(document).ready(function () {
     })
   );
 
-  const $faqBtn = $(".faq__item-btn");
+  const $faqBtn = $(".faq__item");
 
   // FAQ 내용 모두 닫기
   $(".faq__item-body").slideUp();
 
   // FAQ 버튼 클릭 시 해당 아이템만 열고, 나머지는 닫기
   $faqBtn.on("click", function () {
-    const $currentItem = $(this).closest(".faq__item");
+    const $currentItem = $(this);
     // 현재 아이템 토글
     $currentItem.toggleClass("faq__item--active");
     $currentItem.children(".faq__item-body").slideToggle();

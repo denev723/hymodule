@@ -8,20 +8,6 @@
     top: 0;
     left: rem(280);
     z-index: 9;
-    &__container {
-        @include flex-center;
-        padding: rem(45) 0;
-        position: relative;
-    }
-
-    .btn-menu {
-        display: none;
-        position: absolute;
-        left: rem(-6);
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
     &__search {
         width: 100%;
         max-width: rem(500);
@@ -54,42 +40,133 @@
         }
     }
 
-    .btn-login {
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-        transition: color 0.3s ease;
-    }
+    &--desktop {
+        padding: 0 rem(40);
+        .site-header__container {
+            @include flex-center;
+            padding: rem(45) 0;
+            position: relative;
+        }
 
-    &.site-header--sub {
-        .btn-menu {
-            svg {
-                fill: $color-white;
-            }
-            &:hover,
-            &:focus {
+        .btn-login {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+
+        &.site-header--sub {
+            .btn-menu {
                 svg {
-                    fill: $color-primary-hover;
+                    fill: $color-white;
+                }
+                &:hover,
+                &:focus {
+                    svg {
+                        fill: $color-primary-hover;
+                    }
+                }
+            }
+            .btn-login {
+                color: $color-white;
+                &:hover,
+                &:focus {
+                    color: $color-primary-hover;
                 }
             }
         }
-        .btn-login {
-            color: $color-white;
-            &:hover,
-            &:focus {
-                color: $color-primary-hover;
+    }
+
+    &--mb {
+        display: none;
+        .site-header__container {
+            padding: rem(45) 0;
+        }
+        .site-header__top {
+            min-height: rem(60);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: rem(30);
+            position: relative;
+            .btn-menu {
+                visibility: hidden;
+                margin-left: rem(-11);
+            }
+            .site-logo {
+                width: rem(210);
+                margin-bottom: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                &__wrapper {
+                    display: flex;
+                    align-items: center;
+                    gap: 0 rem(15);
+                }
+                &__text {
+                    width: calc(100% - #{rem(59)});
+                    flex: 1;
+                    text-align: left;
+                }
+            }
+        }
+        .site-header__bottom {
+            .site-header__search {
+                max-width: none;
             }
         }
     }
 }
 
-@media (max-width: 1650px) {
+@media (max-width: 1350px) {
     .site-header {
         width: 100%;
         left: 0;
-        .btn-menu {
+        &--desktop {
+            display: none;
+        }
+        &--mb {
             display: block;
+            .site-header__top {
+                .btn-menu {
+                    visibility: visible;
+                }
+                .site-logo {
+                    &__wrapper {
+                        gap: 0 rem(8);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 720px) {
+    .site-header {
+        &__search {
+            input {
+                height: rem(45);
+                padding: rem(10) rem(56) rem(10) rem(16);
+                background-color: $color-gray-100;
+                font-family: $font-nanum-square;
+                font-size: rem(14);
+            }
+        }
+
+        &--mb {
+            padding: 0 rem(20);
+            .site-header__container {
+                padding: rem(25) 0;
+            }
+            .site-header__top {
+                min-height: rem(50);
+                margin-bottom: rem(15);
+                .site-logo {
+                    width: rem(160);
+                }
+            }
         }
     }
 }

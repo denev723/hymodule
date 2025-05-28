@@ -21,7 +21,7 @@
         background-color: $color-blue-800;
     }
     &__brand {
-        flex: 1;
+        width: calc(100% - #{rem(635)});
         padding-left: rem(35);
         p {
             font-family: $font-arial-black;
@@ -36,7 +36,7 @@
     }
     &__info {
         width: rem(635);
-        padding: rem(13) rem(55) rem(13) 0;
+        padding-right: rem(55);
         hr {
             margin-top: rem(50);
             margin-bottom: rem(55);
@@ -79,7 +79,8 @@
         }
     }
     &__family {
-        display: inline-block;
+        width: 100%;
+        max-width: rem(340);
         position: relative;
         &.site-footer__family--active {
             ul {
@@ -156,22 +157,65 @@
     }
 }
 
-@media (max-width: 1675px) {
+// @media (max-width: 1650px) {
+//     .site-footer {
+//         &__brand {
+//             padding-left: 0;
+//             p {
+//                 font-size: rem(100);
+//                 line-height: lh(83);
+//             }
+//         }
+//         &__info {
+//             width: rem(580);
+//             padding: rem(7) 0;
+//         }
+//         &__link-list {
+//             padding-left: 0;
+//             margin-left: rem(-16);
+//         }
+//         &__copyright {
+//             padding-right: 0;
+//         }
+//     }
+// }
+
+@media (max-width: 1600px) {
     .site-footer {
+        &__top {
+            flex-direction: column;
+            gap: rem(80) 0;
+        }
         &__brand {
-            padding-left: 0;
-            p {
-                font-size: rem(120);
-                line-height: lh(103);
+            width: 100%;
+            padding: 0 rem(35);
+            img {
+                width: rem(450);
             }
         }
         &__info {
-            width: rem(580);
-            padding: rem(7) 0;
+            width: 100%;
+            padding: 0 rem(35);
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .site-footer {
+        &__top,
+        &__bottom {
+            padding-left: rem(40);
+            padding-right: rem(40);
+        }
+        &__brand {
+            padding: 0;
+        }
+        &__info {
+            padding: 0;
         }
         &__link-list {
-            padding-left: 0;
             margin-left: rem(-16);
+            padding-left: 0;
         }
         &__copyright {
             padding-right: 0;

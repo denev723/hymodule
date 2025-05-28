@@ -182,3 +182,11 @@
             color 0.3s ease;
     }
 }
+
+@media (max-width: 900px) {
+    .video-card__list {
+        flex-direction: column;
+        align-items: center;
+        gap: rem(40) 0;
+    }
+}
