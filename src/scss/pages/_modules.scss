@@ -139,12 +139,15 @@
     }
     &__list {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(#{rem(340)}, 1fr));
         gap: rem(80) rem(30);
         margin-bottom: rem(80);
         &-wrap {
             padding-top: rem(50);
             border-top: 1px solid #eeeeee;
+        }
+        .module-card {
+            max-width: none;
         }
         &-top {
             display: flex;
