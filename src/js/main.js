@@ -204,24 +204,28 @@ $(document).ready(function () {
   }
 
   $(".site-header").on("click", ".btn-menu", function () {
-    if (!$(".site-side").hasClass("active")) {
-      $(".site-side").addClass("active");
+    if (!$(".site-side").hasClass("site-side--active")) {
+      $(".site-side").addClass("site-side--active");
     } else {
-      $(".site-side").removeClass("active");
+      $(".site-side").removeClass("site-side--active");
     }
+  });
+
+  $(".btn-close").on("click", function () {
+    $(".site-side").removeClass("site-side--active");
   });
 
   // ESC 키로 사이드 메뉴 닫기
   $(document).on("keydown", function (e) {
     if (e.key === "Escape") {
-      $(".site-side").removeClass("active");
+      $(".site-side").removeClass("site-side--active");
     }
   });
 
   // 외부 클릭 시 사이드 메뉴 닫기
   $(document).on("click", function (e) {
     if (!$(e.target).closest(".site-side, .btn-menu").length) {
-      $(".site-side").removeClass("active");
+      $(".site-side").removeClass("site-side--active");
     }
   });
 });

@@ -406,6 +406,10 @@
 }
 
 @media (max-width: 720px) {
+    .btn-round {
+        padding: rem(9) rem(14);
+        font-size: rem(14);
+    }
     .btn-submit {
         @include btn-style(rem(46), rem(40));
         svg {
@@ -426,6 +430,24 @@
         svg {
             width: rem(14);
             height: rem(16);
+        }
+    }
+    .btn-family {
+        height: rem(40);
+        padding: rem(10) rem(30) rem(10) rem(10);
+        border-radius: rem(6);
+        font-size: rem(13);
+        svg {
+            @include icon-size(rem(10), rem(6));
+            right: rem(13);
+        }
+    }
+    .btn-close {
+        width: rem(44);
+        height: rem(44);
+        svg {
+            width: rem(20);
+            height: rem(20);
         }
     }
 }

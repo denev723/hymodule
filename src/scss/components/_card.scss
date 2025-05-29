@@ -190,3 +190,68 @@
         gap: rem(40) 0;
     }
 }
+
+@media (max-width: 720px) {
+    .module-card {
+        max-width: rem(260);
+        &__image {
+            margin-bottom: rem(17);
+            @include card-radius(16);
+        }
+        &__category {
+            min-width: rem(60);
+            height: rem(30);
+            padding: rem(6) rem(10);
+            margin-bottom: rem(15);
+            font-size: rem(13);
+        }
+        &__title {
+            margin-bottom: rem(7);
+            font-size: rem(19);
+        }
+        &__desc {
+            font-size: rem(12);
+            line-height: lh(22);
+        }
+        &__dep {
+            height: rem(30);
+            padding-left: rem(36);
+            margin-top: rem(18);
+            background-size: rem(30);
+            font-family: $font-nanum-gothic;
+            font-size: rem(13);
+        }
+    }
+
+    .video-card__list {
+        gap: rem(20) 0;
+    }
+
+    .video-card {
+        width: rem(260);
+        &__thumb {
+            margin-bottom: rem(15);
+            @include card-radius(16);
+        }
+        &__time {
+            gap: 0 rem(4);
+            padding: rem(7) rem(11);
+            font-size: rem(12);
+            line-height: rem(10);
+            top: rem(14);
+            left: rem(17);
+            .dot {
+                width: rem(6);
+                height: rem(6);
+            }
+        }
+        &__logo {
+            width: rem(45);
+            height: rem(45);
+        }
+        &__title {
+            font-size: rem(16);
+            line-height: rem(26);
+        }
+    }
+}

@@ -166,6 +166,12 @@
         padding: rem(50) rem(60);
         border-right: none;
         left: -100%;
+        transition: left 0.3s ease;
+
+        &.site-side--active {
+            left: 0;
+        }
+
         &__container {
             .btn-top {
                 display: none;
@@ -275,6 +281,82 @@
             border-top: none;
             &__item {
                 flex: 1;
+            }
+        }
+    }
+}
+
+@media (max-width: 720px) {
+    .site-side {
+        padding: rem(30) rem(20);
+
+        &__top {
+            margin-bottom: rem(30);
+            .btn-close {
+                margin-left: rem(-12);
+            }
+        }
+
+        &__caption {
+            padding: 0 rem(9);
+        }
+
+        .lnb {
+            max-width: rem(320);
+            margin: 0 auto;
+            gap: 2px;
+            &__item {
+                width: calc(50% - 1px);
+                & > a {
+                    height: rem(160);
+                    p {
+                        width: 100%;
+                        padding: rem(43) 0 0;
+                        background-position: 50% 0;
+                        font-size: rem(15);
+                        text-align: center;
+                    }
+                }
+                &-0 {
+                    & > a {
+                        p {
+                            background-size: rem(34);
+                        }
+                    }
+                }
+                &-1 {
+                    & > a {
+                        p {
+                            background-size: rem(30);
+                        }
+                    }
+                }
+                &-2 {
+                    & > a {
+                        p {
+                            background-size: rem(31);
+                        }
+                    }
+                }
+                &-3 {
+                    & > a {
+                        p {
+                            background-size: rem(30);
+                        }
+                    }
+                }
+            }
+        }
+
+        .gnb {
+            padding: rem(32) 0;
+            margin-bottom: rem(30);
+            &__item {
+                flex: 1;
+                a {
+                    padding: rem(8) 0 rem(8) rem(33);
+                    font-size: rem(14);
+                }
             }
         }
     }

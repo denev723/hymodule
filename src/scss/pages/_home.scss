@@ -398,33 +398,25 @@
         border-top: 1px solid $color-gray-900;
     }
     &__item {
-        padding: rem(29) rem(82) rem(29) 0;
+        padding: rem(19) 0;
         border-bottom: 1px solid $color-gray-100;
         position: relative;
         cursor: pointer;
         &.faq__item--active {
             .faq__item-btn {
-                background-color: $color-gray-900;
-                transition: background-color 0.3s ease;
-                &:hover,
-                &:focus {
-                    background-color: $color-primary-hover;
-                    svg {
-                        fill: $color-white;
-                    }
-                }
                 svg {
-                    fill: $color-white;
                     transform: rotate(-90deg);
                 }
             }
         }
         &-top {
+            min-height: rem(52);
             display: flex;
+            padding-right: rem(82);
             font-family: $font-nanum-square;
             font-weight: 800;
             font-size: rem(22);
-            line-height: lh(32);
+            line-height: lh(52);
             transition: color 0.3s ease;
         }
         &-num {
@@ -433,7 +425,7 @@
         }
         &-body {
             display: none;
-            padding: rem(25) rem(63) 0;
+            padding: rem(15) rem(82) 0 rem(63);
             font-family: $font-nanum-square;
             font-size: rem(18);
             line-height: lh(32);
@@ -442,7 +434,7 @@
             @include btn-style(rem(52), rem(52));
             border-radius: 50%;
             position: absolute;
-            top: rem(16);
+            top: rem(19);
             right: rem(15);
             &:hover,
             &:focus {
@@ -587,6 +579,7 @@
     }
 
     .slides {
+        padding-bottom: rem(30);
         &__container {
             gap: rem(20) 0;
         }
@@ -643,34 +636,141 @@
     }
 
     .keywords {
-        margin-bottom: rem(70);
+        margin-bottom: rem(40);
         &__container {
             padding: rem(33) 0;
-            display: flex;
-            justify-content: space-between;
+        }
+        &__content {
+            flex-direction: column;
+            gap: rem(20) 0;
         }
         &__title {
             h2 {
-                font-family: $font-nanum-square;
-                font-weight: 700;
-                font-size: rem(24);
-                line-height: rem(34);
+                margin-bottom: rem(20);
+                font-size: rem(18);
+                line-height: rem(28);
             }
-        }
-        &__content {
-            display: flex;
-            flex-direction: column;
-            gap: rem(20) 0;
         }
         &__list {
             width: 100%;
             padding: 0;
             &-title {
-                margin-bottom: rem(17);
-                font-family: $font-nanum-square;
-                font-weight: 700;
-                font-size: rem(18);
-                line-height: rem(28);
+                margin-bottom: rem(12);
+                font-size: rem(16);
+                line-height: rem(26);
+            }
+        }
+    }
+
+    .cards {
+        margin-bottom: rem(40);
+        &--my {
+            margin-bottom: rem(50);
+        }
+        &__container {
+            .card-swiper {
+                margin-bottom: rem(40);
+            }
+        }
+        &__title-wrap {
+            margin-bottom: rem(22);
+        }
+        &__title {
+            font-size: rem(22);
+            line-height: rem(28);
+        }
+        .card-swiper__btn {
+            padding: rem(4) rem(7);
+            svg {
+                @include icon-size(rem(20), rem(14));
+            }
+        }
+    }
+
+    .notice {
+        margin-bottom: rem(50);
+        &__title-wrap {
+            margin-bottom: rem(15);
+        }
+        &__title {
+            font-size: rem(22);
+            line-height: rem(32);
+        }
+        &__btns {
+            margin-right: rem(-9);
+        }
+        &__btn-more {
+            @include btn-style(rem(46), rem(36));
+            padding: rem(10) rem(3);
+            svg {
+                @include icon-size(rem(34), rem(12));
+            }
+        }
+        &__item {
+            &-wrap {
+                padding: rem(18) 0 rem(23);
+            }
+            &-category {
+                margin-bottom: rem(6);
+                font-size: rem(15);
+            }
+            &-title {
+                font-size: rem(16);
+                line-height: rem(24);
+            }
+            &-date {
+                font-size: rem(12);
+                line-height: rem(24);
+            }
+        }
+    }
+
+    .faq {
+        margin-bottom: rem(50);
+        &__title {
+            margin-bottom: rem(15);
+            font-size: rem(22);
+            line-height: rem(32);
+        }
+        &__item {
+            padding: rem(19) 0;
+            &-top {
+                min-height: rem(32);
+                padding-right: rem(52);
+                font-size: rem(16);
+                line-height: lh(32);
+            }
+            &-num {
+                width: rem(40);
+            }
+            &-body {
+                padding: rem(15) rem(52) 0 rem(40);
+                font-size: rem(14);
+                line-height: lh(28);
+            }
+            &-btn {
+                @include btn-style(rem(32), rem(32));
+                top: rem(19);
+                right: rem(10);
+                svg {
+                    @include icon-size(rem(15), rem(14));
+                }
+            }
+        }
+    }
+
+    .video-content {
+        padding-top: 0;
+        padding-bottom: rem(83);
+        &__title-wrap {
+            margin-bottom: rem(37);
+        }
+        &__title {
+            font-size: rem(28);
+            line-height: rem(38);
+            &-sub {
+                margin-bottom: rem(6);
+                font-size: rem(16);
             }
         }
     }

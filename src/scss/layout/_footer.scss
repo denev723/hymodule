@@ -7,7 +7,8 @@
     &__bottom {
         display: flex;
         gap: 0 rem(50);
-        padding: 0 rem(60);
+        padding-left: rem(60);
+        padding-right: rem(60);
     }
     &__top {
         min-height: rem(720);
@@ -23,16 +24,6 @@
     &__brand {
         width: calc(100% - #{rem(635)});
         padding-left: rem(35);
-        p {
-            font-family: $font-arial-black;
-            font-size: rem(150);
-            line-height: lh(133);
-            letter-spacing: -0.08em;
-            color: $color-white;
-            span {
-                color: $color-blue-800;
-            }
-        }
     }
     &__info {
         width: rem(635);
@@ -219,6 +210,90 @@
         }
         &__copyright {
             padding-right: 0;
+        }
+    }
+}
+
+@media (max-width: 720px) {
+    .site-footer {
+        &__top,
+        &__bottom {
+            padding-left: rem(20);
+            padding-right: rem(20);
+        }
+        &__top {
+            min-height: rem(635);
+            gap: rem(40) 0;
+            padding-top: rem(60);
+            padding-bottom: rem(60);
+        }
+        &__bottom {
+            min-height: auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: rem(10) 0;
+            padding: rem(36) rem(20) rem(50);
+        }
+        &__brand {
+            padding: 0;
+            img {
+                width: rem(250);
+            }
+        }
+        &__info {
+            hr {
+                margin-top: rem(30);
+                margin-bottom: rem(35);
+            }
+            &-desc {
+                p {
+                    font-size: rem(18);
+                    line-height: lh(28);
+                }
+            }
+            &-list {
+                flex-direction: column;
+                gap: rem(20) 0;
+                margin-bottom: rem(34);
+                li {
+                    p {
+                        &.title {
+                            margin-bottom: rem(8);
+                            font-size: rem(14);
+                        }
+                        &.desc {
+                            font-size: rem(12);
+                            line-height: lh(24);
+                        }
+                    }
+                }
+            }
+        }
+        &__family {
+            max-width: rem(200);
+            ul {
+                li {
+                    a {
+                        padding: rem(7) 0;
+                        font-size: rem(12);
+                    }
+                }
+            }
+        }
+        &__link-list {
+            padding-left: 0;
+            margin-left: rem(-10);
+            li {
+                a {
+                    padding: rem(14) rem(10);
+                    font-size: rem(12);
+                }
+            }
+        }
+        &__copyright {
+            padding-right: 0;
+            font-size: rem(12);
         }
     }
 }
