@@ -33,3 +33,13 @@
         }
     }
 }
+
+@media (max-width: 725px) {
+    .pagination {
+        &__item-link {
+            width: rem(40);
+            height: rem(40);
+            font-size: rem(12);
+        }
+    }
+}

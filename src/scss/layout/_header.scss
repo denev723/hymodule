@@ -56,17 +56,6 @@
         }
 
         &.site-header--sub {
-            .btn-menu {
-                svg {
-                    fill: $color-white;
-                }
-                &:hover,
-                &:focus {
-                    svg {
-                        fill: $color-primary-hover;
-                    }
-                }
-            }
             .btn-login {
                 color: $color-white;
                 &:hover,
@@ -117,6 +106,27 @@
                 max-width: none;
             }
         }
+        &.site-header--sub {
+            .btn-menu {
+                svg {
+                    fill: $color-white;
+                }
+                &:hover,
+                &:focus {
+                    svg {
+                        fill: $color-primary-hover;
+                    }
+                }
+            }
+            .site-logo {
+                &__icon {
+                    fill: $color-white;
+                }
+                &__text {
+                    color: $color-white;
+                }
+            }
+        }
     }
 }
 
@@ -143,7 +153,7 @@
     }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 725px) {
     .site-header {
         &__search {
             input {

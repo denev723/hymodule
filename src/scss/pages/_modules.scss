@@ -21,6 +21,7 @@
             font-size: rem(34);
             line-height: lh(44);
             color: $color-white;
+            word-break: keep-all;
             span {
                 color: #f6ff00;
             }
@@ -53,6 +54,7 @@
             font-family: $font-nanum-square;
             font-size: rem(36);
             line-height: lh(50);
+            word-break: keep-all;
             color: $color-black;
             span {
                 color: #00467f;
@@ -188,6 +190,146 @@
                 &:focus {
                     border-color: $color-primary-hover;
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 1350px) {
+    .modules {
+        &__subvisual {
+            padding-top: rem(230);
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .modules {
+        &__list {
+            grid-template-columns: repeat(auto-fit, minmax(#{rem(280)}, 1fr));
+        }
+    }
+}
+
+@media (max-width: 725px) {
+    .modules {
+        &__subvisual {
+            height: rem(450);
+            padding-top: rem(160);
+            &-content {
+                padding: rem(60) rem(20) rem(40);
+            }
+            &-title {
+                margin-bottom: rem(23);
+                font-size: rem(22);
+                line-height: lh(32);
+                &--en {
+                    margin-bottom: rem(9);
+                    font-size: rem(12);
+                }
+            }
+            .btn-next {
+                bottom: rem(-30);
+            }
+        }
+        &__container {
+            padding: rem(80) rem(20) rem(100);
+        }
+        &__title {
+            margin-bottom: rem(28);
+            .round-title--bg {
+                margin-bottom: rem(13);
+            }
+            p {
+                font-size: rem(22);
+                line-height: lh(36);
+                br {
+                    display: none;
+                }
+            }
+        }
+        &__keywords {
+            margin-bottom: rem(40);
+            &-title {
+                margin-bottom: rem(20);
+                font-size: rem(16);
+                line-height: lh(28);
+            }
+        }
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: rem(50) rem(20);
+            margin-bottom: rem(50);
+            .module-card {
+                width: calc(50% - #{rem(10)});
+                min-width: rem(260);
+            }
+            &-wrap {
+                padding-top: rem(40);
+            }
+            &-top {
+                margin-bottom: rem(25);
+            }
+            &-total {
+                font-size: rem(18);
+                line-height: lh(28);
+            }
+            &-view-control {
+                gap: 0 rem(4);
+                &-select {
+                    width: rem(120);
+                    height: rem(40);
+                    padding: rem(5) rem(33) rem(5) rem(13);
+                    border-radius: rem(6);
+                    background-size: rem(10);
+                    background-position: calc(100% - rem(10)) 50%;
+                    font-size: rem(14);
+                }
+            }
+        }
+        .gridbox--type-1 {
+            margin-bottom: rem(60);
+            &-item {
+                .gridbox--type-1-item-title {
+                    .title {
+                        padding-top: rem(57);
+                        &::before {
+                            width: rem(41);
+                            height: rem(41);
+                        }
+                        &.title-1::before {
+                            height: rem(42);
+                        }
+                        &.title-8::before {
+                            width: rem(42);
+                            height: rem(42);
+                        }
+                    }
+                }
+            }
+        }
+        .list--type-1 {
+            margin-bottom: rem(51);
+            .list__item-logo {
+                svg {
+                    width: rem(32);
+                    height: rem(32);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 595px) {
+    .modules {
+        &__list {
+            flex-direction: column;
+            .module-card {
+                width: 100%;
+                min-width: auto;
+                max-width: rem(360);
+                margin: 0 auto;
             }
         }
     }

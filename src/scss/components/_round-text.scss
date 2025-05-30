@@ -75,3 +75,10 @@
         }
     }
 }
+
+@media (max-width: 725px) {
+    .round-title--bg {
+        padding: rem(13) rem(16);
+        font-size: rem(14);
+    }
+}

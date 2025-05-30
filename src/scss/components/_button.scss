@@ -405,17 +405,19 @@
     }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 725px) {
     .btn-round {
         padding: rem(9) rem(14);
         font-size: rem(14);
     }
+
     .btn-submit {
         @include btn-style(rem(46), rem(40));
         svg {
             @include icon-size(rem(15), rem(15));
         }
     }
+
     .btn-menu {
         width: rem(44);
         height: rem(44);
@@ -424,6 +426,7 @@
             height: rem(16);
         }
     }
+
     .btn-user {
         width: rem(44);
         height: rem(44);
@@ -432,6 +435,7 @@
             height: rem(16);
         }
     }
+
     .btn-family {
         height: rem(40);
         padding: rem(10) rem(30) rem(10) rem(10);
@@ -442,12 +446,52 @@
             right: rem(13);
         }
     }
+
     .btn-close {
         width: rem(44);
         height: rem(44);
         svg {
             width: rem(20);
             height: rem(20);
+        }
+    }
+
+    .btn-round-flex {
+        gap: 0 rem(8);
+        padding: rem(16) rem(19);
+        font-size: rem(14);
+        line-height: rem(14);
+        svg {
+            width: rem(7);
+            height: rem(11);
+            margin-bottom: 1px;
+        }
+    }
+
+    .btn-next {
+        width: rem(60);
+        height: rem(60);
+        svg {
+            width: rem(16);
+            height: rem(10);
+        }
+    }
+
+    .btn-square {
+        width: rem(40);
+        height: rem(40);
+        border-radius: rem(6);
+        &[data-logo="squares"] {
+            svg {
+                width: rem(16);
+                height: rem(16);
+            }
+        }
+        &[data-logo="lines"] {
+            svg {
+                width: rem(13);
+                height: rem(13);
+            }
         }
     }
 }

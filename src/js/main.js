@@ -228,4 +228,46 @@ $(document).ready(function () {
       $(".site-side").removeClass("site-side--active");
     }
   });
+
+  // PC: mouseover/mouseout만 동작
+  $(".gridbox--type-1-item").on("mouseover", function () {
+    if (!isMobile()) $(this).addClass("active");
+  });
+
+  $(".gridbox--type-1-item").on("mouseout", function () {
+    if (!isMobile()) $(this).removeClass("active");
+  });
+
+  // 모바일: 터치(또는 클릭) 시 .active 토글
+  if (isMobile()) {
+    $(".gridbox--type-1-item").on("click", function (e) {
+      e.preventDefault();
+      var $this = $(this);
+      if ($this.hasClass("active")) {
+        $this.removeClass("active");
+      } else {
+        $(".gridbox--type-1-item.active").removeClass("active"); // 한 번에 하나만 활성화
+        $this.addClass("active");
+      }
+    });
+  }
+
+  // 모바일 판별 함수
+  function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+  }
+
+  if (!isMobile()) {
+    $(".gridbox--type-1-item-content").mCustomScrollbar({
+      theme: "minimal",
+      autoHideScrollbar: false,
+      scrollInertia: 500,
+      advanced: {
+        updateOnContentResize: true,
+      },
+    });
+  }
+  // 모바일은 기본 스크롤 사용
 });
