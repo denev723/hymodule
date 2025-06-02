@@ -68,7 +68,7 @@ img {
     }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 725px) {
     .site-logo {
         &__icon {
             @include icon-size(rem(44), rem(43));

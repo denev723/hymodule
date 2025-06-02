@@ -81,4 +81,22 @@
         padding: rem(13) rem(16);
         font-size: rem(14);
     }
+
+    .round-category {
+        padding: rem(8) rem(13);
+        font-size: rem(14);
+        &-outline {
+            padding: rem(7) rem(12);
+            font-size: rem(14);
+            &--thick {
+                border: rem(2) solid $color-primary;
+                padding: rem(8) rem(10);
+                font-size: rem(14);
+            }
+            &--gray {
+                padding: rem(8) rem(13);
+                font-size: rem(14);
+            }
+        }
+    }
 }

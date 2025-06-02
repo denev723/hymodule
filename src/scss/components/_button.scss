@@ -494,4 +494,49 @@
             }
         }
     }
+
+    .btn-homepage {
+        gap: rem(12) 0;
+        font-size: rem(12);
+        &__icon {
+            width: rem(50);
+            height: rem(50);
+            svg {
+                width: rem(14);
+            }
+        }
+    }
+
+    .major-btn {
+        min-width: rem(80);
+        width: auto;
+        height: rem(50);
+        gap: 0 rem(5);
+        padding: rem(10) rem(20);
+        font-size: rem(16);
+        span {
+            flex-shrink: 0;
+        }
+        &.major-btn--module {
+            .major-btn__icon {
+                width: rem(18);
+                height: rem(17);
+            }
+        }
+        &.major-btn--prev {
+            .major-btn__icon {
+                width: rem(15);
+                height: rem(15);
+            }
+        }
+        &.major-btn--heart {
+            min-width: auto;
+            width: rem(50);
+            height: rem(50);
+            .major-btn__icon {
+                width: rem(20);
+                height: rem(18);
+            }
+        }
+    }
 }

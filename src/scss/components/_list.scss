@@ -144,7 +144,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                padding: rem(20);
+                padding: rem(20) rem(10);
                 border-radius: rem(20);
                 text-align: center;
             }
@@ -206,6 +206,98 @@
                 .list__item-title {
                     font-size: rem(14);
                     line-height: lh(20);
+                }
+            }
+        }
+
+        &-numeric {
+            &__item {
+                &:not(:last-child) {
+                    margin-bottom: rem(30);
+                }
+                &-title {
+                    gap: 0 rem(6);
+                    margin-bottom: rem(15);
+                    p {
+                        font-size: rem(16);
+                        line-height: lh(28);
+                    }
+                }
+                &-num {
+                    width: rem(28);
+                    height: rem(28);
+                    font-size: rem(14);
+                    line-height: rem(13);
+                }
+            }
+        }
+
+        &-plus {
+            li {
+                padding-left: rem(13);
+                font-size: rem(14);
+                line-height: lh(26);
+                &::before {
+                    width: rem(8);
+                    height: rem(8);
+                    top: rem(9);
+                }
+            }
+        }
+
+        &-boxes {
+            gap: rem(6) 0;
+            &--flex {
+                flex-wrap: wrap;
+                gap: rem(10);
+                .list-boxes__item {
+                    flex: auto;
+                    width: calc(50% - #{rem(10)});
+                }
+            }
+            &__item {
+                padding: rem(12) rem(15);
+                border-radius: rem(8);
+                p {
+                    font-size: rem(14);
+                    line-height: lh(20);
+                }
+                &--flex {
+                    height: rem(80);
+                    padding: rem(15) rem(10);
+                }
+            }
+        }
+
+        &-box {
+            padding: rem(10) rem(15);
+            border-radius: rem(10);
+            li {
+                padding-left: rem(10);
+                font-size: rem(14);
+                line-height: lh(26);
+                &::before {
+                    top: rem(11);
+                }
+            }
+            &--flex {
+                gap: 0 rem(10);
+                li {
+                    width: calc(50% - #{rem(5)});
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .list {
+        &-box {
+            &--flex {
+                flex-direction: column;
+                gap: 0;
+                li {
+                    width: 100%;
                 }
             }
         }
