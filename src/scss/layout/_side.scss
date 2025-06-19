@@ -87,12 +87,20 @@
         &-1 {
             & > a {
                 p {
+                    background-image: url(../images/lnb-icon-1-new.png);
+                    background-size: rem(24);
+                }
+            }
+        }
+        &-2 {
+            & > a {
+                p {
                     background-image: url(../images/lnb-icon-2-new.png);
                     background-size: rem(20);
                 }
             }
         }
-        &-2 {
+        &-3 {
             & > a {
                 p {
                     background-image: url(../images/lnb-icon-3-new.png);
@@ -100,7 +108,7 @@
                 }
             }
         }
-        &-3 {
+        &-4 {
             & > a {
                 p {
                     background-image: url(../images/lnb-icon-4-new.png);
