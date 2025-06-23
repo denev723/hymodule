@@ -31,6 +31,28 @@
     }
 }
 
+.round-row-title {
+    text-align: center;
+    margin-bottom: rem(20);
+    span {
+        display: inline-block;
+        padding: rem(16) rem(18);
+        border-radius: rem(100);
+        background-color: $color-white;
+        font-family: $font-nanum-square;
+        font-weight: 700;
+        font-size: rem(18);
+        line-height: 1;
+        color: $color-black;
+    }
+    &--bg {
+        span {
+            background-color: #5b76ed;
+            color: $color-white;
+        }
+    }
+}
+
 .round-category {
     display: inline-block;
     padding: rem(11) rem(18);

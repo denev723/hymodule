@@ -79,8 +79,8 @@
         &-0 {
             & > a {
                 p {
-                    background-image: url(../images/lnb-icon-1-new.png);
-                    background-size: rem(24);
+                    background-image: url(../images/lnb-icon-5-new.png);
+                    background-size: rem(20);
                 }
             }
         }
@@ -168,7 +168,7 @@
     }
 }
 
-@media (max-width: 1350px) {
+@media (max-width: 1400px) {
     .site-side {
         width: 100%;
         padding: rem(50) rem(60);
