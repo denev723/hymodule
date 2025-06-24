@@ -79,7 +79,7 @@
         &-0 {
             & > a {
                 p {
-                    background-image: url(../images/lnb-icon-5-new.png);
+                    background-image: url(../images/lnb-icon-5.png);
                     background-size: rem(20);
                 }
             }
@@ -168,7 +168,7 @@
     }
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1350px) {
     .site-side {
         width: 100%;
         padding: rem(50) rem(60);
@@ -216,28 +216,15 @@
             gap: 1px;
             margin-bottom: 0;
             position: relative;
-            &::before {
-                content: "";
-                width: 100%;
-                height: 2px;
-                background-color: #eeeeee;
-                position: absolute;
-                top: 50%;
-                left: 0;
-                transform: translateY(-50%);
-            }
-            &::after {
-                content: "";
-                width: 2px;
-                height: 100%;
-                background-color: #eeeeee;
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-            }
             &__item {
                 width: calc(50% - 1px);
+                border-bottom: 1px solid #eee;
+                &:nth-child(2n-1) {
+                    border-right: 1px solid #eee;
+                }
+                &:last-child {
+                    border-bottom: none;
+                }
                 & > a {
                     height: rem(200);
                     display: flex;
@@ -253,25 +240,32 @@
                 &-0 {
                     & > a {
                         p {
-                            background-size: rem(44);
+                            background-size: rem(38);
                         }
                     }
                 }
                 &-1 {
                     & > a {
                         p {
-                            background-size: rem(40);
+                            background-size: rem(44);
                         }
                     }
                 }
                 &-2 {
                     & > a {
                         p {
-                            background-size: rem(41);
+                            background-size: rem(40);
                         }
                     }
                 }
                 &-3 {
+                    & > a {
+                        p {
+                            background-size: rem(41);
+                        }
+                    }
+                }
+                &-4 {
                     & > a {
                         p {
                             background-size: rem(40);
@@ -328,25 +322,32 @@
                 &-0 {
                     & > a {
                         p {
-                            background-size: rem(34);
+                            background-size: rem(30);
                         }
                     }
                 }
                 &-1 {
                     & > a {
                         p {
-                            background-size: rem(30);
+                            background-size: rem(34);
                         }
                     }
                 }
                 &-2 {
                     & > a {
                         p {
-                            background-size: rem(31);
+                            background-size: rem(30);
                         }
                     }
                 }
                 &-3 {
+                    & > a {
+                        p {
+                            background-size: rem(31);
+                        }
+                    }
+                }
+                &-4 {
                     & > a {
                         p {
                             background-size: rem(30);

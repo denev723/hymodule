@@ -99,9 +99,22 @@
 }
 
 @media (max-width: 725px) {
+    .round-title {
+        padding: rem(14) rem(20);
+        font-size: rem(16);
+    }
+
     .round-title--bg {
         padding: rem(13) rem(16);
         font-size: rem(14);
+    }
+
+    .round-row-title {
+        margin-bottom: rem(15);
+        span {
+            padding: rem(13) rem(15);
+            font-size: rem(14);
+        }
     }
 
     .round-category {
